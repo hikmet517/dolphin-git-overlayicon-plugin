@@ -1,5 +1,6 @@
-pkgname=dolphin-git-overlayicon-plugin
-pkgver=1.0.0
+pkgname=dolphin-git-overlayicon-plugin-git
+_pkgname=${pkgname%-git*}
+pkgver=r2.f5a33bb
 pkgrel=1
 pkgdesc='Git overlay icon for dolphin'
 arch=('x86_64')
@@ -16,19 +17,21 @@ makedepends=(
     'qt6-tools'
     'kio'
 )
+source=("git+https://github.com/hikmet517/dolphin-git-overlayicon-plugin")
+sha256sums=('SKIP')
 
-prepare() {
-    cd ..
+pkgver() {
+    cd "${srcdir}/${_pkgname}"
     printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
-    cd ../..
+    cd "$srcdir/${_pkgname}"
     cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
     cmake --build build/
 }
 
 package () {
-    cd ../..
+    cd "$srcdir/${_pkgname}"
     DESTDIR=$pkgdir cmake --install build
 }
