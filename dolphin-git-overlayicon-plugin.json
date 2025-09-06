@@ -1,0 +1,12 @@
+{
+  "KPlugin": {
+    "Name": "GIT Overlay Icon",
+    "Description": "Git overlay icon for dolphin",
+    "ServiceTypes": [
+      "KOverlayIconPlugin"
+    ],
+    "MimeTypes": [
+      "inode/directory"
+    ]
+  }
+}
