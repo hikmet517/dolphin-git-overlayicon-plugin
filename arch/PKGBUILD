@@ -1,6 +1,6 @@
 pkgname=dolphin-git-overlayicon-plugin-git
 _pkgname=${pkgname%-git*}
-pkgver=r2.f5a33bb
+pkgver=r3.4720cc4
 pkgrel=1
 pkgdesc='Git overlay icon for dolphin'
 arch=('x86_64')

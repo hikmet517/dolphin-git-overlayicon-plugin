@@ -5,7 +5,7 @@ Git overlay icon for dolphin file manager.
 ![screenshot](./resources/screenshot.png)
 
 
-# Compile ant install manually
+# Compile and install
 
 ```
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
